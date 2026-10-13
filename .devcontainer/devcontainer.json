@@ -1,0 +1,52 @@
+// Configuration du Codespace : Java 17 + WPILib 2026 + un petit bureau virtuel
+// (accessible dans le navigateur) pour afficher la fenêtre du simulateur.
+{
+  "name": "FRC Java 2026 - Volant",
+  "image": "mcr.microsoft.com/devcontainers/java:1-17-bookworm",
+
+  "features": {
+    // Bureau virtuel visible dans un onglet du navigateur (noVNC), port 6080.
+    // Mot de passe du bureau : vscode
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "password": "vscode",
+      "webPort": "6080",
+      "vncPort": "5901"
+    }
+  },
+
+  "remoteEnv": {
+    "DISPLAY": ":1",
+    "LIBGL_ALWAYS_SOFTWARE": "1"
+  },
+
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": { "label": "Bureau du simulateur", "onAutoForward": "notify" },
+    "5901": { "label": "VNC", "onAutoForward": "ignore" },
+    "1735": { "label": "NetworkTables 3", "onAutoForward": "ignore" },
+    "5810": { "label": "NetworkTables 4", "onAutoForward": "ignore" }
+  },
+
+  // Installe les bibliothèques graphiques et télécharge WPILib/REVLib une première fois.
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-gradle"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.import.gradle.wrapper.enabled": true,
+        "java.server.launchMode": "Standard",
+        "files.encoding": "utf8"
+      }
+    }
+  },
+
+  // 2 cœurs / 8 Go suffisent (c'est le plus petit Codespace, le moins coûteux en heures).
+  "hostRequirements": {
+    "cpus": 2
+  }
+}
