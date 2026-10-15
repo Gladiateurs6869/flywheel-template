@@ -48,9 +48,12 @@ sur GitHub. Son adresse ressemble à : `https://github.com/ton-nom/volant-alex`.
 1. Sur la page de **ton** dépôt, clique sur le bouton vert **<> Code**.
 2. Choisis l'onglet **Codespaces**.
 3. Clique sur **Create codespace on main** (« Créer un codespace sur main »).
-4. Un nouvel onglet s'ouvre. **La première fois, c'est long (3 à 5 minutes)** : le Codespace
-   installe Java et télécharge WPILib. Tu verras défiler du texte dans le terminal en bas.
-5. Attends le message :
+4. Un nouvel onglet s'ouvre avec le message *Setting up your codespace* (« Préparation de ton
+   codespace »). **La première fois, c'est long (3 à 5 minutes)** : le Codespace installe Java
+   et télécharge WPILib. Clique sur **View logs** (« Voir le journal ») si tu veux voir le
+   texte défiler.
+5. Quand tout est prêt, le journal affiche le message ci-dessous et l'éditeur s'ouvre tout
+   seul :
 
    ```
    ==========================================

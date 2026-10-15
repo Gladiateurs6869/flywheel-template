@@ -13,8 +13,7 @@ La fenêtre du simulateur s'affiche sur un **bureau virtuel**, dans un autre ong
 3. Passe la souris dessus et clique sur l'icône 🌐 **Open in Browser** (« Ouvrir dans le
    navigateur »).
 4. Un nouvel onglet s'ouvre avec la page **noVNC**. Clique sur **Connect** (« Connecter »).
-5. Mot de passe : **`vscode`**
-6. Tu vois un bureau noir (vide) : c'est normal ! Garde cet onglet ouvert.
+5. Tu vois un bureau vide : c'est normal ! Garde cet onglet ouvert.
 
 > 💡 **L'image est trop petite ou trop grande ?** Dans noVNC, ouvre le petit menu à gauche →
 > ⚙️ **Settings** → **Scaling Mode** → choisis **Remote Resizing**.

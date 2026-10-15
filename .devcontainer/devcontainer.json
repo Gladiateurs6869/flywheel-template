@@ -2,13 +2,15 @@
 // (accessible dans le navigateur) pour afficher la fenêtre du simulateur.
 {
   "name": "FRC Java 2026 - Volant",
-  "image": "mcr.microsoft.com/devcontainers/java:1-17-bookworm",
+  // Image Java 17 + bibliothèques graphiques : voir le Dockerfile.
+  "build": { "dockerfile": "Dockerfile" },
 
   "features": {
     // Bureau virtuel visible dans un onglet du navigateur (noVNC), port 6080.
-    // Mot de passe du bureau : vscode
+    // Pas de mot de passe : le port d'un Codespace est privé (seul son propriétaire,
+    // connecté à GitHub, peut l'ouvrir).
     "ghcr.io/devcontainers/features/desktop-lite:1": {
-      "password": "vscode",
+      "password": "noPassword",
       "webPort": "6080",
       "vncPort": "5901"
     }
@@ -27,8 +29,9 @@
     "5810": { "label": "NetworkTables 4", "onAutoForward": "ignore" }
   },
 
-  // Installe les bibliothèques graphiques et télécharge WPILib/REVLib une première fois.
-  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  // Télécharge WPILib/REVLib une première fois.
+  // onCreateCommand (et non postCreateCommand) : VS Code attend la fin avant de s'ouvrir.
+  "onCreateCommand": "bash .devcontainer/on-create.sh",
 
   "customizations": {
     "vscode": {
